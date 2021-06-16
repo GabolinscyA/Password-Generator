@@ -8,7 +8,7 @@ def new_password():
     file.write("\n")
     file.write(passw0rds)
     file.close()
-    print("Your password has been saved in the 'Passwords' text file on your desktop")
+    print("Your password has been saved in the 'Passwords' text file on your desktop.")
     password_ask()
 
 def password_ask():
