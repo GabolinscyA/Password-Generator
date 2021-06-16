@@ -3,14 +3,13 @@ def confirmation_check():
     confirmation = input("You have chosen to start generating a new password. Are you sure you would like to continue this function?")
     confirmation = confirmation.strip().lower()
     if confirmation == "yes":
+        print("Starting password generation now...")
         generation()
         options()
     elif confirmation == "no":
-        print("\n")
         print("Returning you to the main menu now")
         options()
     else:
-        print("\n")
         print("Please answer with yes or no")
         confirmation_check()
 def generation():
