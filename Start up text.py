@@ -3,6 +3,7 @@ def generation():
     keep_password_checK(password_numb)
 
 def keep_password_checK(password_numb):
+    print("\n")
     save_password = input("Your new password is {}. Would you like to save this password?".format(password_numb))
     save_password = save_password.strip().lower()
     if save_password == "yes":
@@ -22,7 +23,9 @@ def password_saving(password_numb):
     file.write("\n")
     file.write(password_numb)
     file.close()
+    print("\n")
     print("Your password has been saved")
+    print("\n")
     print("If you want to view your new password, type '2' in the main menu")
     print("Alternatively, you can view your password directly in the 'Passwords' text file on your desktop")
 
