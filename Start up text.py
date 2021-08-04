@@ -1,20 +1,19 @@
 def generation():
-    print("Please enter a random number")
-    password_numb = input()
-    keep_password_checK()
+    password_numb = input("Please enter a random number")
+    keep_password_checK(password_numb)
 
-def keep_password_checK():
+def keep_password_checK(password_numb):
     save_password = input("Your new password is {}. Would you like to save this password?".format(password_numb))
     save_password = save_password.strip().lower()
     if save_password == "yes":
-        password_saving()
+        password_saving(password_numb)
     elif save_password == "no":
-        save_confirmation()
+        save_confirmation(password_numb)
     else:
         print("Please answer 'yes' or 'no'")
-        keep_password_checK()
+        keep_password_checK(password_numb)
 
-def password_saving():
+def password_saving(password_numb):
     website = input("What would you like this password to be used for?")
     file = open("C:/Users/gabolinscya/Desktop/Passwords.txt", "a")
     file.write("\n")
@@ -27,16 +26,16 @@ def password_saving():
     print("If you want to view your new password, type '2' in the main menu")
     print("Alternatively, you can view your password directly in the 'Passwords' text file on your desktop")
 
-def save_confirmation():
+def save_confirmation(password_numb):
     save_confirm = input("Are you sure you wouldn't like to save the password:{}?".format(password_numb))
     save_confirm = save_confirm.strip().lower()
     if save_confirm == "yes":
         print("Directing you back to the menu...")
     elif save_confirm == "no":
-        password_saving()
+        password_saving(password_numb)
     else:
         print("Please answer 'yes' or 'no'")
-        save_confirmation()
+        save_confirmation(password_numb)
 
 def confirmation_check():
     print("\n")
