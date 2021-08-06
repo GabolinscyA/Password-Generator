@@ -12,3 +12,7 @@ print(alphebet_pick)
 
 number_pick = random.randint(0,9)
 print(number_pick)
+
+symbol_list = ['`', '~', '!', '@', '$', '#', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '{', '[', '}', ']', '|', '<', ',', '>', '.', '?', '/', ':', ';']
+symbol_pick = secrets.choice(symbol_list)
+print(symbol_pick)
