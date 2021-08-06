@@ -8,5 +8,7 @@ if capitalize_letter == True:
     alphebet_pick = alphebet_pick.capitalize()
 elif capitalize_letter == False:
     alphebet_pick = alphebet_pick
-print(capitalize_letter)
 print(alphebet_pick)
+
+number_pick = random.randint(0,9)
+print(number_pick)
