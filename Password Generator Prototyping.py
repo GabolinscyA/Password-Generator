@@ -16,3 +16,6 @@ print(number_pick)
 symbol_list = ['`', '~', '!', '@', '$', '#', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '{', '[', '}', ']', '|', '<', ',', '>', '.', '?', '/', ':', ';']
 symbol_pick = secrets.choice(symbol_list)
 print(symbol_pick)
+
+pattern_repeat = random.randint(3,8)
+print(pattern_repeat)
