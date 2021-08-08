@@ -3,8 +3,10 @@ import secrets
 az_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 symbol_list = ['`', '~', '!', '@', '$', '#', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '{', '[', '}', ']', '|', '<', ',', '>', '.', '?', '/', ':', ';']
 password_list = []
+pattern_repeat = random.randint(3,8)
 
-for i in range(3,9):
+
+for i in range(pattern_repeat):
     alphebet_pick = secrets.choice(az_list)
     capitalize_letter = random.getrandbits(1)
     if capitalize_letter == True:
@@ -16,11 +18,9 @@ for i in range(3,9):
     password_list.append(number_pick)
     symbol_pick = secrets.choice(symbol_list)
     password_list.append(symbol_pick)
-print(password_list)
+print(*password_list, sep="")
 
 
 
 
 
-#pattern_repeat = random.randint(3,8)
-#print(pattern_repeat)
