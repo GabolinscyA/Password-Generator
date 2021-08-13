@@ -12,6 +12,9 @@ pattern_repeat = random.randint(3, 8)
 
 #This function is where the password generates using randomizors.
 def generation(password_list):
+    #This line of code makes sure to clear the list so that further passwords generated on the same programme run time
+    #aren't layered onto of the previous password
+    password_list = []
     #The 'for i in range' uses a randomly generated number between 3 and 8 to figure out how many times to repeat the
     #letter (uppercase or lowercase), number between 0 and 9, and symbol randomized pattern. After each variable of the pattern
     #is generated, it is then placed into the password list.
