@@ -10,6 +10,22 @@ password_list = []
 # Declaring the variable 'pattern_repeat' so that the 'for i in range' function works
 pattern_repeat = random.randint(3, 8)
 
+#This function asks the user if they are sure that they want to start generating a password
+def generator_start_up_confirmation(password_list):
+    print("\n")
+    confirmation = input("You have chosen to start generating a new password. Are you sure you would like to continue this function?")
+    confirmation = confirmation.strip().lower()
+    if confirmation == "yes":
+        print("Starting password generation now...")
+        generation(password_list)
+        main_menu(password_list)
+    elif confirmation == "no":
+        print("Returning you to the main menu now")
+        main_menu(password_list)
+    else:
+        print("Please answer with 'yes' or 'no'")
+        generator_start_up_confirmation(password_list)
+
 #This function is where the password generates using randomizors.
 def generation(password_list):
     #This line of code makes sure to clear the list so that further passwords generated on the same programme run time
@@ -47,6 +63,20 @@ def save_password_check(str1):
         print("Please answer 'yes' or 'no'")
         save_password_check(str1)
 
+#This function asks the user if they are sure that they want to not save the newly generated password.
+#The purpose of this function is to absolutely make sure that the user mean't to input 'no' from the previous function
+def ignore_password_confirmation(str1):
+    print("\n")
+    ignore_confirm = input("Are you sure you wouldn't like to save the password : {} :".format(str1))
+    ignore_confirm = ignore_confirm.strip().lower()
+    if ignore_confirm == "yes":
+        print("Returning you to the main menu now")
+    elif ignore_confirm == "no":
+        password_saving(str1)
+    else:
+        print("Please answer 'yes' or 'no'")
+        ignore_password_confirmation(str1)
+
 #This fucnction first asks the user what the password is to be used for so that when saved in the dedicated text document
 #that the password is saved to a type of word. Meaning that the user won't forget which password is for what. The function
 #Then saves the password into the text document and returns the user to the main menu.
@@ -64,36 +94,6 @@ def password_saving(str1):
     print("\n")
     print("If you want to view your new password, type '2' in the main menu")
     print("Alternatively, you can view your password directly in the 'Passwords' text file on your desktop")
-
-#This function asks the user if they are sure that they want to not save the newly generated password.
-#The purpose of this function is to absolutely make sure that the user mean't to input 'no' from the previous function
-def ignore_password_confirmation(str1):
-    print("\n")
-    ignore_confirm = input("Are you sure you wouldn't like to save the password : {} :".format(str1))
-    ignore_confirm = ignore_confirm.strip().lower()
-    if ignore_confirm == "yes":
-        print("Returning you to the main menu now")
-    elif ignore_confirm == "no":
-        password_saving(str1)
-    else:
-        print("Please answer 'yes' or 'no'")
-        ignore_password_confirmation(str1)
-
-#This function asks the user if they are sure that they want to start generating a password
-def generator_start_up_confirmation(password_list):
-    print("\n")
-    confirmation = input("You have chosen to start generating a new password. Are you sure you would like to continue this function?")
-    confirmation = confirmation.strip().lower()
-    if confirmation == "yes":
-        print("Starting password generation now...")
-        generation(password_list)
-        main_menu(password_list)
-    elif confirmation == "no":
-        print("Returning you to the main menu now")
-        main_menu(password_list)
-    else:
-        print("Please answer with 'yes' or 'no'")
-        generator_start_up_confirmation(password_list)
 
 #This is the main menu of the entire program. From this function you can access any part of the code through the 3 button input system that is in place.
 def main_menu(password_list):
