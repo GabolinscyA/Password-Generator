@@ -1,4 +1,4 @@
-# Declaring the 'random' and the 'secrets' operation
+#Declaring the 'random' and the 'secrets' operation
 import random
 import secrets
 # Creating lists so that the random operation may pick a character within the list
